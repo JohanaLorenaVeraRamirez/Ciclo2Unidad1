@@ -3,8 +3,13 @@ public class App {
         System.out.println("Hello, World!");
         Persona p1 = new Persona();
         p1.setEdad(20);
-        p1.setNombre(Andres);
         System.out.println(p1.getEdad());
-        System.out.println(p1.getNombre());
+        p1.setNombre("Andrés");
+        System.out.println(p1.getNombre()); 
+        
+        inversion resultadoInversion = new inversion();
+        System.out.println(resultadoInversion.compararInversion(12,2000000,5));
+        inversion resultadoInversion2 = new inversion();
+        System.out.println(resultadoInversion2.compararInversion(11,2005000.0,4));      
     }
 }
