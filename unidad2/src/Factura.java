@@ -1,12 +1,27 @@
 // Inicio de la solución
+package src;
 public class Factura{
     // Atributos
-    public double totalJuguetes;
-    public double totalJuguetesBebe;
-    public double totalJuguetesLego;
-    Juguete lista[];
+    private double totalJuguetes;
+    private double totalJuguetesBebe;
+    private double totalJuguetesLego;
+
+    private Juguete listaJuguetes[];
 
     // Constructores
+
+    public Factura(){
+        this.totalJuguetes = 0.0;
+        this.totalJuguetesBebe = 0.0;
+        this.totalJuguetesLego = 0.0;
+    }
+    public Factura(Juguete listaJuguetes){
+        this.totalJuguetes = 0.0;
+        this.totalJuguetesBebe = 0.0;
+        this.totalJuguetesLego = 0.0;
+
+        this.listaJuguetes = listaJuguetes;
+    }
     // Metodos
     public void mostrarTotales(){
     // Calculo de totales
@@ -16,55 +31,9 @@ public class Factura{
     }
     
    }
-   public class Juguete{
-    // Constantes
-    private final static String MARCA="Hasbro";
-    private final static String PAIS_ORIGEN="China";
-    private final static String double PRECIO_BASE=10000;
-    // Atributos
-    private String marca;
-    private String paisOrigen;
-    private Double precioBase
-     // Constructores
- 
- // Metodos
- private tipoDato metodo1(){
-    // En caso de ser necesarios metodos adicionales
-    }
-    public double calcularPrecio(){
-    // Calculos
-    return precioFinal;
-    }
-    // getters/setters de ser necesarios
-   }
-   public class JugueteBebe extends Juguete{
-    // Constantes
-    private final static String MATERIAL="Plastico";
-    // Atributos
-    private String material;
-    // Constructores
-    
-    // Metodos
-    public double calcularPrecio(){
-    // Calculos
-    return precioFinal;
-    }
-    // getters/setters de ser necesarios
-   }
-   public class JugueteLego extends Juguete{
-    // Constantes
-    private final static int NUMERO_FICHAS = 100;
-    // Atributos
-    private int numero_fichas;
-    // Constructores
-    
-    // Metodos
-    public double calcularPrecio(){
-    // Calculos
-    return precioFinal;
-    }
-    // getters/setters de ser necesarios
-   }
+  
+   
+   
    // Fin de la solución
    // Esta clase es para las pruebas, no se debe subir como parte de la solución
 //    public class App {
