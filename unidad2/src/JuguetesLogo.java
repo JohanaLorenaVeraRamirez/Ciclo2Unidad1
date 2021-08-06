@@ -1,4 +1,5 @@
-public class JugueteLego extends Juguete{
+package src;
+public class JuguetesLogo extends Juguetes{
     // Constantes
     private final static int NUMERO_FICHAS = 100;
     // Atributos

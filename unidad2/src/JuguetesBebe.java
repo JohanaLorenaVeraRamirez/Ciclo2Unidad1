@@ -1,4 +1,5 @@
-public class JugueteBebe extends Juguete{
+package src;
+public class JuguetesBebe extends Juguetes{
     // Constantes
     private final static String MATERIAL="Plastico";
     // Atributos
