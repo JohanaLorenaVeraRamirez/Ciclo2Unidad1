@@ -1,37 +1,38 @@
 // Inicio de la solución
 package src;
-public class Factura{
-    // Atributos
-    private double totalJuguetes;
-    private double totalJuguetesBebe;
-    private double totalJuguetesLego;
-
-    private Juguete listaJuguetes[];
-
-    // Constructores
-
-    public Factura(){
-        this.totalJuguetes = 0.0;
-        this.totalJuguetesBebe = 0.0;
-        this.totalJuguetesLego = 0.0;
-    }
-    public Factura(Juguete listaJuguetes){
-        this.totalJuguetes = 0.0;
-        this.totalJuguetesBebe = 0.0;
-        this.totalJuguetesLego = 0.0;
-
-        this.listaJuguetes = listaJuguetes;
-    }
-    // Metodos
-    public void mostrarTotales(){
-    // Calculo de totales
-    System.out.println("El precio total de los juguetes es de " + totalJuguetes);
-    System.out.println("La suma del precio de los JuguetesBebe es de " + totalJuguetesBebe);
-    System.out.print("La suma del precio de los JuguetesLego es de " + totalJuguetesLego);
+public class Factura {
+    private Double totalJuguetes;
+    private Double totalJuguetesBebe;
+    private Double totalJuguetesLego;
+    private Juguetes[] listaJuguetes;
+    
+    public Factura(Juguetes[] lJuguetes) {
+        listaJuguetes = lJuguetes;
     }
     
-   }
-  
+    public void mostrarTotales(){
+        
+        totalJuguetes=0.0;
+        totalJuguetesBebe = 0.0;
+        totalJuguetesLego =0.0;
+
+        for(int i = 0; i < 5; i++){
+            totalJuguetes = totalJuguetes + listaJuguetes[i].calcularPrecio();
+            if (listaJuguetes[i] instanceof JuguetesBebe){
+                totalJuguetesBebe = totalJuguetesBebe + listaJuguetes[i].calcularPrecio();
+            }
+            if (listaJuguetes[i] instanceof JuguetesLogo){
+                totalJuguetesLego = totalJuguetesLego + listaJuguetes[i].calcularPrecio();
+            }
+        }       
+        System.out.println("El precio total de los juguetes es de " + totalJuguetes);
+        System.out.println("La suma del precio de los JuguetesBebe es de " + totalJuguetesBebe);
+        System.out.print("La suma del precio de los JuguetesLego es de " + totalJuguetesLego);
+    }
+    
+}
+
+
    
    
    // Fin de la solución

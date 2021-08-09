@@ -8,45 +8,79 @@ public class Juguetes{
     private String marca;
     private String paisOrigen;
     private Double precioBase;
+    private Double precioFinal;
+    private Double precioBase1;
+    //private Double precioBase1;
+    //private Double precioBase2;
+   
      // Constructores
  
- // Metodos
+ 
     public Juguetes(){
         this.marca = MARCA;
         this.paisOrigen = PAIS_ORIGEN;
         this.precioBase= PRECIO_BASE;
+        
     }
     public Juguetes(String marca, String paisOrigen){
         this.marca = marca;
-        this.paisOrigen = PAIS_ORIGEN;
+        this.paisOrigen = paisOrigen;
         this.precioBase= PRECIO_BASE;
+        
     }
     public Juguetes(String marca, String paisOrigen, Double precioBase){
         this.marca = marca;
         this.paisOrigen = paisOrigen;
         this.precioBase = precioBase;
+       
+        
     }
+    
+    // Metodos
     public void tipoDato(String marca){
+        if(marca == MARCA){
+            this.marca = MARCA;
+        }else{
+            this.marca = marca;
+        }
+    }
+
     public Double calcularPrecio(){
         Double precioFinal = 0.0;
         Double precioBase = 0.0;
-        Double vOrigen = 0.0;
-        if(marca == MARCA)
-                precioFinal = precioBase*0.50;
-            else
-                precioFinal= precioBase*0.75; 
+        Double precioBase1 = 0.0;
 
-                if (paisOrigen==PAIS_ORIGEN)
-                precioFinal= precioBase-5000;
-        
-                    else
-                         precioFinal=precioBase-2500;
-            
-    }
-        
-    }      
+        if(this.marca == MARCA)
+                precioBase1 = precioBase*0.50;
+            else
+                precioBase1= precioBase*0.75; 
+
+            if (this.paisOrigen==PAIS_ORIGEN){
+                if (precioFinal>5000){
+                    precioFinal = precioBase1 -5000.0; 
     
+                }
+            }else{
+                    if(precioFinal>2500){
+                        precioFinal = precioBase1 - 2500.0; 
+                    }   
+      return precioFinal;      
     }
+    public void setPrecioFinal(Double precioFinal) {
+        this.precioFinal = precioFinal;
+    }
+    public Double getPrecioFinal() {
+        return precioFinal;
+    }
+    public Double getPrecioBase1() {
+        return precioBase1;
+    }
+    public void setPrecioBase1(Double precioBase1) {
+        this.precioBase1 = precioBase1;
+
+
+    
+}
  
-    return precioFinal;
+    
   
